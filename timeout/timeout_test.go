@@ -23,7 +23,8 @@ func (c *Callback) IsCalled() bool {
 func Test_SetTimeout(t *testing.T) {
 	t.Run("Callback function called after the delay", func(t *testing.T) {
 		c := Callback{isCalled: false}
-		_ = timeout.SetTimeout(c.Call, 100*time.Microsecond)
+		cancel := timeout.SetTimeout(c.Call, 100*time.Microsecond)
+		defer cancel()
 		time.Sleep(300 * time.Microsecond)
 		if !c.IsCalled() {
 			t.Error("First argument of SetTimeout must be called after the delay.")
