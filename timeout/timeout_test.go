@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/progfay/timeout"
+	"github.com/progfay/go-timeout/timeout"
 )
 
 type Callback struct {

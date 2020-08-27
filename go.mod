@@ -1,3 +1,3 @@
-module github.com/progfay/timeout
+module github.com/progfay/go-timeout
 
 go 1.14
